@@ -70,7 +70,7 @@ function setBroadcast(broadcastId) {
 };
 
 function setQuality(broadcastName) {
-    var q = ('ZDF' === broadcastName) ? '1280*720 px, 3329 kbps, 25 fps' : '960*540 px, 1988 kbps, 25 fps';
+    var q = ('ARD' !== broadcastName) ? '1280*720 px, 3329 kbps, 25 fps' : '960*540 px, 1988 kbps, 25 fps';
     document.getElementById('quality').textContent = q;
 };
 
