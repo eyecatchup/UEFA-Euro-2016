@@ -14,6 +14,8 @@ function getQueryParams() {
 function createVideoElem(video) {
     var el = document.createElement('video');
     el.controls = 1;
+    el.preload = '';
+    el.poster = './player-default.png';
     el.src = video;
     document.getElementById('player').appendChild(el);
 };
@@ -313,8 +315,8 @@ function getMatch(matchId) {
             away: 'Poland', awayCode: 'POL', awayGoals: '0',
             group: 'C', stage: 1, venue: 0, uefaMatchId: 2017889,
             video: {
-                source: null,
-                streamcloud: {broadcastId: 1, time: '1:xx', hash: 'mikj0vbxdkao'}
+                source: {broadcastId: 1, time: '1:36', url: 'nrodl.zdf.de/de/zdf/16/06/160616_eurogerpol_spiel_spo_3328k_p36v12.mp4'},
+                streamcloud: {broadcastId: 1, time: '1:36', hash: 'mikj0vbxdkao'}
             }
         },
         '19': {
@@ -415,6 +417,46 @@ function getMatch(matchId) {
             video: {
                 source: {broadcastId: 0, time: '1:39', url: 'ondemand-de.wdr.de/medp/fsk0/113/1138062/1138062_13198905.mp4'},
                 streamcloud: {broadcastId: 0, time: '1:39', hash: '2wro9onvz0bi'}
+            }
+        },
+        '29': {
+            date: '2016/06/21 18:00',
+            home: 'Ukraine', homeCode: 'UKR', homeGoals: '0',
+            away: 'Poland', awayCode: 'POL', awayGoals: '1',
+            group: 'C', stage: 2, venue: 3, uefaMatchId: 2017898,
+            video: {
+                source: null,
+                streamcloud: null
+            }
+        },
+        '30': {
+            date: '2016/06/21 18:00',
+            home: 'Northern Ireland', homeCode: 'NIR', homeGoals: '0',
+            away: 'Germany', awayCode: 'GER', awayGoals: '1',
+            group: 'C', stage: 2, venue: 4, uefaMatchId: 2017897,
+            video: {
+                source: {broadcastId: 0, time: '1:34', url: 'ondemand-de.wdr.de/medp/fsk0/113/1138081/1138081_13209969.mp4'},
+                streamcloud: {broadcastId: 0, time: '1:34', hash: '7alf2edf8glt'}
+            }
+        },
+        '31': {
+            date: '2016/06/21 21:00',
+            home: 'Czech Republic', homeCode: 'CZE', homeGoals: '0',
+            away: 'Turkey', awayCode: 'TUR', awayGoals: '2',
+            group: 'D', stage: 2, venue: 1, uefaMatchId: 2017900,
+            video: {
+                source: null,
+                streamcloud: {broadcastId: 2, time: '1:39', hash: ''}
+            }
+        },
+        '32': {
+            date: '2016/06/21 21:00',
+            home: 'Croatia', homeCode: 'CRO', homeGoals: '2',
+            away: 'Spain', awayCode: 'ESP', awayGoals: '1',
+            group: 'D', stage: 2, venue: 2, uefaMatchId: 2017899,
+            video: {
+                source: {broadcastId: 0, time: '1:37', url: 'ondemand-de.wdr.de/medp/fsk0/113/1138099/1138099_13211210.mp4'},
+                streamcloud: {broadcastId: 0, time: '1:37', hash: ''}
             }
         }
     };
