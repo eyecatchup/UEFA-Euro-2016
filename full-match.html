@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>UEFA Euro 2016 live-streams - Watch all matches online in full-length and HD.</title>
+    <meta name='description' content='UEFA Euro 2016 live-streams - Watch all matches online in full-length and HD.'>
+    <meta name='viewport' content='height=device-height, initial-scale=1.0'>
+    <meta name='mobile-web-app-capable' content='yes'>
+    <meta name='application-name' content='Countdown'>
+    <meta name='theme-color' content='#000000'>
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
+    <meta name='apple-mobile-web-app-title' content='Countdown'>
+    <style>
+        html,body{height:100%;}body{background:url(./euro2016bg.jpg) no-repeat center center fixed;background-size:cover;background-color:#000;overflow:hidden;text-align:center;line-height:2.2em;padding-top:1%;font-family:Arial;}
+        h1,h2,h3,#info span,#info a,.link-extern,.link-extern a{color:#fff;text-shadow:3px 3px 2px #000;}h1{font-size:1.6em;}h2{font-size:1.175em;font-weight:400;line-height:1.2em;}h3{font-size:.85em;font-weight:300;line-height:1.3em;}#info{font-size:80%;}#player video{width:50%;}
+    </style>
+    <link rel='shortcut icon' href='./euro2016.ico'>
+    <link rel='icon' href='./euro2016.ico' type='image/x-icon'>
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1><nobr><span id='home'></span> (<span id='homeCode'></span>)</nobr> &nbsp; <nobr><span id='homeGoals'></span> &ndash; <span id='awayGoals'></span></nobr> &nbsp; <nobr><span id='away'></span> (<span id='awayCode'></span>)</nobr></h1>
+            <h2>UEFA Euro 2016 - <span id='stage'></span><span id='group'></span><br><nobr><span id='date'></span> - </nobr> <nobr><span id='venue'></span></nobr></h2>
+            <h3><span>Full match [HD] - <nobr>Length: <span id='duration'></span> h</nobr> - <nobr>Quality: <span id='quality'></span></nobr></span><br><nobr>Commentary language: German</nobr> - <nobr>Broadcaster: <span id='broadcast'></span></nobr></h3>
+        </hgroup>
+    </header>
+    <p id='info'><span id='allMatches'>Back to <a href='all-matches.html'>match list</a>.</span></p>
+    <div id='player'></div>
+    <script src='./funcs.js'></script>
+    <script>
+        window.onload = function () {
+            var queryParams = getQueryParams()
+              , matchId = ('undefined' !== typeof queryParams.matchId) ? queryParams.matchId : false;
+
+            if (!!matchId) {
+                var match = getMatch(matchId)
+                  , hashTag = getHashtag(match.homeCode, match.awayCode)
+                  , uefaUrl = getUefaMatchUrl(match.uefaMatchId);
+
+                console.dir(match);
+
+                setDate(match.date);
+                setTitle(match);
+                setStage(getStage(match.stage));
+                setVenue(getVenue(match.venue));
+
+                if (!!match.group) {
+                    setGroup(match.group);
+                }
+
+                if (!!match.video) {
+                    setVideos(match.video);
+                }
+
+                if (!match.video.source && !match.video.streamcloud) {
+                    alert('Sorry, this video is not available (yet).');
+                }
+            }
+        };
+
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-57728344-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+</html>
