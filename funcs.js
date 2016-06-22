@@ -1,4 +1,4 @@
-function getQueryParams() {
+﻿function getQueryParams() {
     var a = window.location.search.substring(1)
       , b = a.split('&')
       , c = {};
@@ -456,7 +456,7 @@ function getMatch(matchId) {
             group: 'D', stage: 2, venue: 2, uefaMatchId: 2017899,
             video: {
                 source: {broadcastId: 0, time: '1:37', url: 'ondemand-de.wdr.de/medp/fsk0/113/1138099/1138099_13211210.mp4'},
-                streamcloud: {broadcastId: 0, time: '1:37', hash: ''}
+                streamcloud: {broadcastId: 0, time: '1:37', hash: 'n5ba1uoeu8z0'}
             }
         },
         '33': {
