@@ -46,7 +46,7 @@ function setGroup(group) {
     document.getElementById('group').innerHTML = ', Group ' + group;
 };
 
-function setVideos(videos) {
+function setVideos(videos, label) {
     if (!!videos.source) {
         createVideoElem('http://' + videos.source.url);
         setDuration(videos.source.time);
@@ -54,7 +54,7 @@ function setVideos(videos) {
     }
 
     if (!!videos.streamcloud) {
-        setStreamcloudLink(getStreamcloudUrl(videos.streamcloud.hash));
+        setStreamcloudLink(getStreamcloudUrl(videos.streamcloud.hash), label);
 
         if (!videos.source) {
             setDuration(videos.streamcloud.time);
@@ -78,12 +78,21 @@ function setDuration(videoLength) {
     document.getElementById('duration').textContent = videoLength;
 };
 
-function setStreamcloudLink(url) {
+function setStreamcloudLink(url, label) {
     var el = document.createElement('span');
     el.className = 'link-extern';
-    el.innerHTML = 'If on-page player does not load, you can always <a href="' + url + '" target="_blank">watch this match on StreamCloud</a>. &nbsp; | ';
+    el.innerHTML = 'If on-page player does not load, you can always <a onclick="javascript:onStreamcloudLinkClicked(\'' + label + '\');" href="' + url + '" target="_blank">watch this match on StreamCloud</a>. &nbsp; | ';
     document.getElementById('allMatches').parentNode.insertBefore(el, document.getElementById('allMatches'));
     document.getElementById('allMatches').innerHTML = '&nbsp; ' + document.getElementById('allMatches').innerHTML;
+};
+
+function onStreamcloudLinkClicked(label) {
+    console.log('tracking streamcloud link click for ' + label);
+    ga('send', 'event', {
+        eventCategory: 'Streamcloud Link',
+        eventAction: 'click',
+        eventLabel: label
+    });
 };
 
 function getUefaMatchUrl(uefaMatchId) {
@@ -446,7 +455,7 @@ function getMatch(matchId) {
             group: 'D', stage: 2, venue: 1, uefaMatchId: 2017900,
             video: {
                 source: null,
-                streamcloud: {broadcastId: 2, time: '1:39', hash: ''}
+                streamcloud: {broadcastId: 2, time: '1:47', hash: 'hjkewrvkzpt4'}
             }
         },
         '32': {
@@ -475,7 +484,7 @@ function getMatch(matchId) {
             away: 'Portugal', awayCode: 'POR', awayGoals: '',
             group: 'E', stage: 2, venue: 8, uefaMatchId: 2017864,
             video: {
-                source: {broadcastId: 1, time: '1:xx', url: ''},
+                source: {broadcastId: 1, time: '1:xx', url: 'nrodl.zdf.de/de/zdf/16/06/160622_eurohunpor_spiel_spo_3328k_p36v12.mp4'},
                 streamcloud: {broadcastId: 1, time: '1:xx', hash: ''}
             }
         },
@@ -495,7 +504,7 @@ function getMatch(matchId) {
             away: 'Belgium', awayCode: 'BEL', awayGoals: '',
             group: 'F', stage: 2, venue: 5, uefaMatchId: 2017957,
             video: {
-                source: {broadcastId: 1, time: '1:xx', url: ''},
+                source: {broadcastId: 1, time: '1:xx', url: 'nrodl.zdf.de/de/zdf/16/06/160622_euroswebel_spiel_spo_3328k_p36v12.mp4'},
                 streamcloud: {broadcastId: 1, time: '1:xx', hash: ''}
             }
         }

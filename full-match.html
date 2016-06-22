@@ -12,7 +12,7 @@
     <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
     <meta name='apple-mobile-web-app-title' content='Countdown'>
     <style>
-        html,body{height:100%;}body{background:url(./euro2016bg.jpg) no-repeat center center fixed;background-size:cover;background-color:#000;overflow:hidden;text-align:center;line-height:2.2em;padding-top:1%;font-family:Arial;}
+        html,body{height:100%;}body{background:url(./euro2016bg.jpg) no-repeat center center fixed;background-size:cover;background-color:#000;overflow-x:hidden;text-align:center;line-height:2.2em;padding-top:1%;font-family:Arial;}
         h1,h2,h3,#info span,#info a,.link-extern,.link-extern a{color:#fff;text-shadow:3px 3px 2px #000;}h1{font-size:1.5em;}h2{font-size:1.1em;font-weight:400;line-height:1.2em;}h3{font-size:.85em;font-weight:300;line-height:1.3em;}#info{font-size:85%;margin: 0 0 20px;line-height: 1.2em;}#player video{width:50%;}
     </style>
     <link rel='shortcut icon' href='./euro2016.ico'>
@@ -51,7 +51,7 @@
                 }
 
                 if (!!match.video) {
-                    setVideos(match.video);
+                    setVideos(match.video, hashTag);
                 }
 
                 if (!match.video.source && !match.video.streamcloud) {
