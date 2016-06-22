@@ -70,7 +70,7 @@ function setBroadcast(broadcastId) {
 };
 
 function setQuality(broadcastName) {
-    var q = ('ZDF' === broadcastName) ? '1280*720 px, 3329 kbps, 25 fps' : '960*540 px, 1988 kbps, 25 fps';
+    var q = ('ARD' !== broadcastName) ? '1280*720 px, 3329 kbps, 25 fps' : '960*540 px, 1988 kbps, 25 fps';
     document.getElementById('quality').textContent = q;
 };
 
@@ -81,7 +81,7 @@ function setDuration(videoLength) {
 function setStreamcloudLink(url) {
     var el = document.createElement('span');
     el.className = 'link-extern';
-    el.innerHTML = 'Watch <a href="' + url + '" target="_blank">on StreamCloud</a> &nbsp; | ';
+    el.innerHTML = 'If on-page player does not load, you can always <a href="' + url + '" target="_blank">watch this match on StreamCloud</a>. &nbsp; | ';
     document.getElementById('allMatches').parentNode.insertBefore(el, document.getElementById('allMatches'));
     document.getElementById('allMatches').innerHTML = '&nbsp; ' + document.getElementById('allMatches').innerHTML;
 };
@@ -457,6 +457,46 @@ function getMatch(matchId) {
             video: {
                 source: {broadcastId: 0, time: '1:37', url: 'ondemand-de.wdr.de/medp/fsk0/113/1138099/1138099_13211210.mp4'},
                 streamcloud: {broadcastId: 0, time: '1:37', hash: ''}
+            }
+        },
+        '33': {
+            date: '2016/06/22 18:00',
+            home: 'Iceland', homeCode: 'ISL', homeGoals: '',
+            away: 'Austria', awayCode: 'AUS', awayGoals: '',
+            group: 'E', stage: 2, venue: 0, uefaMatchId: 2017963,
+            video: {
+                source: null,
+                streamcloud: {broadcastId: 2, time: '1:xx', hash: ''}
+            }
+        },
+        '34': {
+            date: '2016/06/22 18:00',
+            home: 'Hungary', homeCode: 'HUN', homeGoals: '',
+            away: 'Portugal', awayCode: 'POR', awayGoals: '',
+            group: 'E', stage: 2, venue: 8, uefaMatchId: 2017864,
+            video: {
+                source: {broadcastId: 1, time: '1:xx', url: ''},
+                streamcloud: {broadcastId: 1, time: '1:xx', hash: ''}
+            }
+        },
+        '35': {
+            date: '2016/06/22 21:00',
+            home: 'Italy', homeCode: 'ITA', homeGoals: '',
+            away: 'Republic of Ireland', awayCode: 'IRL', awayGoals: '',
+            group: 'F', stage: 2, venue: 6, uefaMatchId: 2017958,
+            video: {
+                source: null,
+                streamcloud: {broadcastId: 2, time: '1:xx', hash: ''}
+            }
+        },
+        '36': {
+            date: '2016/06/22 21:00',
+            home: 'Sweden', homeCode: 'SWE', homeGoals: '',
+            away: 'Belgium', awayCode: 'BEL', awayGoals: '',
+            group: 'F', stage: 2, venue: 5, uefaMatchId: 2017957,
+            video: {
+                source: {broadcastId: 1, time: '1:xx', url: ''},
+                streamcloud: {broadcastId: 1, time: '1:xx', hash: ''}
             }
         }
     };
