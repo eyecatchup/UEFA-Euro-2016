@@ -6,28 +6,48 @@
     <meta name='description' content='UEFA Euro 2016 live-streams - Watch all matches online in full-length and HD.'>
     <meta name='viewport' content='height=device-height, initial-scale=1.0'>
     <meta name='mobile-web-app-capable' content='yes'>
-    <meta name='application-name' content='Countdown'>
+    <meta name='application-name' content=''>
     <meta name='theme-color' content='#000000'>
     <meta name='apple-mobile-web-app-capable' content='yes'>
     <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
-    <meta name='apple-mobile-web-app-title' content='Countdown'>
+    <meta name='apple-mobile-web-app-title' content=''>
     <style>
-        html,body{height:100%;}body{background:url(./euro2016bg.jpg) no-repeat center center fixed;background-size:cover;background-color:#000;overflow-x:hidden;text-align:center;line-height:2.2em;padding-top:1%;font-family:Arial;}
-        h1,h2,h3,#info span,#info a,.link-extern,.link-extern a{color:#fff;text-shadow:3px 3px 2px #000;}h1{font-size:1.5em;}h2{font-size:1.1em;font-weight:400;line-height:1.2em;}h3{font-size:.85em;font-weight:300;line-height:1.3em;}#info{font-size:85%;margin: 0 0 20px;line-height: 1.2em;}#player video{width:50%;}
+        html,body{height:100%;}body{background:url(./euro2016bg.jpg) no-repeat center center fixed;background-size:cover;background-color:#000;overflow-x:hidden;text-align:center;font-size:normal;line-height:1em;font-family:Arial;}header{margin:30px 0 15px;}
+        h1,h2,h3,#info span,#info a,.link-extern,.link-extern a,#uefaLink{color:#fff;text-shadow:1px 1px 3px #000;}#player video{width:45%;}h1{font-size:1.406275em;line-height:1.666666em;letter-spacing:.093333em;font-weight:800;}h2{font-size:1.094999999em;font-weight:400;line-height:1.32em;letter-spacing:.04275em;}h3{font-size:.9333em;font-weight:300;line-height:1.20541em;letter-spacing:.01333666999em;margin:24px 0 16px;}#info{font-size:.9876em;margin:10px 0 30px;line-height:2.6999em;letter-spacing:.0396em;}#info span.link-extern,#info span.link-extern a{text-shadow:1px 1px 1px #ff0000;}#allMatches{letter-spacing:normal;font-size:.97em;}
     </style>
-    <link rel='shortcut icon' href='./euro2016.ico'>
-    <link rel='icon' href='./euro2016.ico' type='image/x-icon'>
+    <link rel='shortcut icon' href='./euro_2016-logo.svg'>
+    <link rel='icon' href='./euro_2016-logo.svg' type='image/x-icon'>
 </head>
 <body>
     <header>
         <hgroup>
-            <h1><nobr><span id='home'></span> (<span id='homeCode'></span>)</nobr> &nbsp; <nobr><span id='homeGoals'></span> &ndash; <span id='awayGoals'></span></nobr> &nbsp; <nobr><span id='away'></span> (<span id='awayCode'></span>)</nobr></h1>
-            <h2>UEFA Euro 2016 - <span id='stage'></span><span id='group'></span><br><nobr><span id='date'></span> - </nobr> <nobr><span id='venue'></span></nobr></h2>
-            <h3><span>Full match [HD] - <nobr>Commentary language: German</nobr> - <nobr>Broadcaster: <span id='broadcast'></span></nobr><br><nobr>Video length: <span id='duration'></span> h</nobr> - <nobr>Video quality: <span id='quality'></span></nobr></span></h3>
+            <h1>
+                <nobr><span id='home'></span> (<span id='homeCode'></span>)</nobr> &nbsp;
+                <nobr><span id='homeGoals'></span> &ndash; <span id='awayGoals'></span></nobr> &nbsp;
+                <nobr><span id='away'></span> (<span id='awayCode'></span>)</nobr>
+            </h1>
+            <h2>
+                <nobr>UEFA<sup>&copy;</sup> Euro 2016</nobr> &ndash;
+                <span id='stage'></span><span id='group'></span><br>
+                <nobr><span id='date'></span> &ndash; </nobr>
+                <nobr><span id='venue'></span></nobr>
+            </h2>
+            <h3>
+                Full match [HD] &ndash;
+                <nobr>Video length: <span id='duration'></span> h</nobr> &ndash;
+                <nobr>Video quality: <span id='quality'></span></nobr><br>
+                <nobr>Commentary: German</nobr> &ndash;
+                <nobr>Broadcast: <span id='broadcast'></span></nobr> &ndash;
+                <nobr>UEFA<sup>&copy;</sup> Match-URL: <a id='uefaLink' href='#' target='_blank'>Highlights, match stats &amp; more</a></nobr>
+            </h3>
         </hgroup>
     </header>
+
     <div id='player'></div>
-    <p id='info'><span id='allMatches'>Back to <a href='all-matches.html'>match list</a>.</span></p>
+    <p id='info'>
+        <span id='allMatches'>Back to the <a href='all-matches.html'>match list</a>.</span>
+    </p>
+
     <script src='./funcs.js'></script>
     <script>
         window.onload = function () {
@@ -35,27 +55,12 @@
               , matchId = ('undefined' !== typeof queryParams.matchId) ? queryParams.matchId : false;
 
             if (!!matchId) {
-                var match = getMatch(matchId)
-                  , hashTag = getHashtag(match.homeCode, match.awayCode)
-                  , uefaUrl = getUefaMatchUrl(match.uefaMatchId);
+                var match = getMatch(matchId);
 
-                console.dir(match);
-
-                setDate(match.date);
-                setTitle(match);
-                setStage(getStage(match.stage));
-                setVenue(getVenue(match.venue));
-
-                if (!!match.group) {
-                    setGroup(match.group);
-                }
-
-                if (!!match.video) {
-                    setVideos(match.video, hashTag);
-                }
-
-                if (!match.video.source && !match.video.streamcloud) {
-                    alert('Sorry, this video is not available (yet).');
+                if (!!match) {
+                    console.log('initializing match...');
+                    console.dir(match);
+                    setMatch(match);
                 }
             }
         };
