@@ -93,9 +93,9 @@ function setDuration(videoLength) {
 function setStreamcloudLink(url, label) {
     var el = document.createElement('span');
     el.className = 'link-extern';
-    el.innerHTML = 'If the on-page player doesn\'t load, watch the <em>permanent</em> <a ' +
+    el.innerHTML = 'If the on-page player doesn\'t load, you can watch the<br><a ' +
         'onclick="javascript:onStreamcloudLinkClicked(\'' + label + '\');" href="' + url +
-        '" target="_blank">mirror of this match on StreamCloud</a>.<br>';
+        '" target="_blank">permanent mirror of this match on StreamCloud</a>.<br>';
     document.getElementById('allMatches').parentNode.insertBefore(el, document.getElementById('allMatches'));
     //document.getElementById('allMatches').innerHTML = '&nbsp; ' + document.getElementById('allMatches').innerHTML;
 };
@@ -365,7 +365,11 @@ function getMatch(matchId) {
                     time: '1:38',
                     url: 'ondemand-de.wdr.de/medp/fsk0/113/1137470/1137470_13124979.mp4'
                 },
-                streamcloud: null
+                streamcloud: {
+                    broadcastId: 0,
+                    time: '1:38',
+                    hash: 'bk9gdnigfszy'
+                }
             }
         },
         '11': {
@@ -391,11 +395,11 @@ function getMatch(matchId) {
         },
         '12': {
             date: '2016/06/14 21:00',
-            home: 'Belgium',
-            homeCode: 'BEL',
+            home: 'Portugal',
+            homeCode: 'POR',
             homeGoals: '1',
-            away: 'Italy',
-            awayCode: 'ITA',
+            away: 'Iceland',
+            awayCode: 'ISL',
             awayGoals: '1',
             group: 'F',
             stage: 0,
@@ -428,7 +432,11 @@ function getMatch(matchId) {
                     time: '1:37',
                     url: 'ondemand-de.wdr.de/medp/fsk0/113/1137509/1137509_13146879.mp4'
                 },
-                streamcloud: null
+                streamcloud: {
+                    broadcastId: 0,
+                    time: '1:37',
+                    hash: 'tcg7ni5x2amx'
+                }
             }
         },
         '14': {
@@ -449,7 +457,11 @@ function getMatch(matchId) {
                     time: '1:36',
                     url: 'ondemand-de.wdr.de/medp/fsk0/114/1140762/1140762_13149025.mp4'
                 },
-                streamcloud: null
+                streamcloud: {
+                    broadcastId: 0,
+                    time: '1:36',
+                    hash: '805r28d28fqh'
+                }
             }
         },
         '15': {
@@ -470,7 +482,11 @@ function getMatch(matchId) {
                     time: '1:41',
                     url: 'hbbtv-de.wdr.de/medp/fsk0/113/1137952/1137952_13150111.mp4'
                 },
-                streamcloud: null
+                streamcloud: {
+                    broadcastId: 0,
+                    time: '1:41',
+                    hash: 'gsg2b19wpcis'
+                }
             }
         },
         '16': {
