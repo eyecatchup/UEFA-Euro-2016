@@ -390,7 +390,11 @@ function getMatch(matchId) {
                     time: '1:37',
                     url: 'nrodl.zdf.de/de/zdf/16/06/160614_euroauthun_spiel_spo_3328k_p36v12.mp4'
                 },
-                streamcloud: null
+                streamcloud: {
+                    broadcastId: 1,
+                    time: '1:35',
+                    hash: '8ot3jrfjawy3'
+                }
             }
         },
         '12': {
@@ -411,7 +415,11 @@ function getMatch(matchId) {
                     time: '1:35',
                     url: 'nrodl.zdf.de/de/zdf/16/06/160614_europorisl_spiel_spo_3328k_p36v12.mp4'
                 },
-                streamcloud: null
+                streamcloud: {
+                    broadcastId: 1,
+                    time: '1:35',
+                    hash: '73kn826woxsc'
+                }
             }
         },
         '13': {
@@ -971,6 +979,206 @@ function getMatch(matchId) {
                     broadcastId: 1,
                     time: '1:35',
                     hash: 'vyoo286ls0cx'
+                }
+            }
+        },
+        '37': {
+            date: '2016/06/25 15:00',
+            home: 'Switzerland',
+            homeCode: 'SUI',
+            homeGoals: '4',
+            away: 'Poland',
+            awayCode: 'POL',
+            awayGoals: '5',
+            group: '',
+            stage: 3,
+            venue: 9,
+            uefaMatchId: 2017996,
+            video: {
+                source: {
+                    broadcastId: 1,
+                    time: '2:15',
+                    url: 'nrodl.zdf.de/de/zdf/16/06/160625_eurosuipol_spiel_spo_3328k_p36v12.mp4'
+                },
+                streamcloud: {
+                    broadcastId: 1,
+                    time: '2:15',
+                    hash: 'v9tsult533oq'
+                }
+            }
+        },
+        '38': {
+            date: '2016/06/25 18:00',
+            home: 'Wales',
+            homeCode: 'WAL',
+            homeGoals: '1',
+            away: 'Northern Ireland',
+            awayCode: 'NIR',
+            awayGoals: '0',
+            group: '',
+            stage: 3,
+            venue: 4,
+            uefaMatchId: 2017997,
+            video: {
+                source: {
+                    broadcastId: 0,
+                    time: '1:35',
+                    url: 'ondemand-de.wdr.de/medp/fsk0/114/1148464/1148464_13252026.mp4'
+                },
+                streamcloud: {
+                    broadcastId: 0,
+                    time: '1:35',
+                    hash: '056pcyhke2t3'
+                }
+            }
+        },
+        '39': {
+            date: '2016/06/25 21:00',
+            home: 'Croatia',
+            homeCode: 'CRO',
+            homeGoals: '0',
+            away: 'Portugal',
+            awayCode: 'POR',
+            awayGoals: '1',
+            group: '',
+            stage: 3,
+            venue: 1,
+            uefaMatchId: 2017998,
+            video: {
+                source: {
+                    broadcastId: 1,
+                    time: '2:16',
+                    url: 'nrodl.zdf.de/de/zdf/16/06/160625_eurokropor_spiel_spo_3328k_p36v12.mp4'
+                },
+                streamcloud: {
+                    broadcastId: 1,
+                    time: '2:16',
+                    hash: '###'
+                }
+            }
+        },
+        '40': {
+            date: '2016/06/26 15:00',
+            home: 'France',
+            homeCode: 'FRA',
+            homeGoals: '2',
+            away: 'Ireland',
+            awayCode: 'IRL',
+            awayGoals: '1',
+            group: '',
+            stage: 3,
+            venue: 8,
+            uefaMatchId: 2017999,
+            video: {
+                source: {
+                    broadcastId: 1,
+                    time: '1:35',
+                    url: 'nrodl.zdf.de/de/zdf/16/06/160626_eurofrairl_spiel_spo_3328k_p36v12.mp4'
+                },
+                streamcloud: {
+                    broadcastId: 1,
+                    time: '1:35',
+                    hash: 'pfzbg6utrx8i'
+                }
+            }
+        },
+        '41': {
+            date: '2016/06/26 18:00',
+            home: 'Germany',
+            homeCode: 'GER',
+            homeGoals: '3',
+            away: 'Slovakia',
+            awayCode: 'SVK',
+            awayGoals: '0',
+            group: '',
+            stage: 3,
+            venue: 6,
+            uefaMatchId: 2018000,
+            video: {
+                source: {
+                    broadcastId: 1,
+                    time: '1:33',
+                    url: 'nrodl.zdf.de/de/zdf/16/06/160626_eurogersvk_spiel_spo_3328k_p36v12.mp4'
+                },
+                streamcloud: {
+                    broadcastId: 1,
+                    time: '1:33',
+                    hash: 'xzd7e49gkdh0'
+                }
+            }
+        },
+        '42': {
+            date: '2016/06/26 21:00',
+            home: 'Hungary',
+            homeCode: 'HUN',
+            homeGoals: '0',
+            away: 'Belgium',
+            awayCode: 'BEL',
+            awayGoals: '4',
+            group: '',
+            stage: 3,
+            venue: 7,
+            uefaMatchId: 2018001,
+            video: {
+                source: {
+                    broadcastId: 1,
+                    time: '1:32',
+                    url: 'nrodl.zdf.de/de/zdf/16/06/160626_eurohunbel_spiel_spo_3328k_p36v12.mp4'
+                },
+                streamcloud: {
+                    broadcastId: 1,
+                    time: '1:32',
+                    hash: 'oro9y2sp4305'
+                }
+            }
+        },
+        '43': {
+            date: '2016/06/27 18:00',
+            home: 'Italy',
+            homeCode: 'ITA',
+            homeGoals: '2',
+            away: 'Spain',
+            awayCode: 'ESP',
+            awayGoals: '0',
+            group: '',
+            stage: 3,
+            venue: 0,
+            uefaMatchId: 2018002,
+            video: {
+                source: {
+                    broadcastId: 0,
+                    time: '1:38',
+                    url: 'ondemand-de.wdr.de/medp/fsk0/114/1149421/1149421_13269952.mp4'
+                },
+                streamcloud: {
+                    broadcastId: 0,
+                    time: '1:38',
+                    hash: 'vpnskh0nujbi'
+                }
+            }
+        },
+        '44': {
+            date: '2016/06/27 21:00',
+            home: 'England',
+            homeCode: 'ENG',
+            homeGoals: '1',
+            away: 'Iceland',
+            awayCode: 'ISL',
+            awayGoals: '2',
+            group: '',
+            stage: 3,
+            venue: 5,
+            uefaMatchId: 2018003,
+            video: {
+                source: {
+                    broadcastId: 0,
+                    time: '1:35',
+                    url: 'ondemand-de.wdr.de/medp/fsk0/114/1149429/1149429_13271913.mp4'
+                },
+                streamcloud: {
+                    broadcastId: 0,
+                    time: '1:35',
+                    hash: 'ypcj6qrlpfsr'
                 }
             }
         }
